@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 50vw;
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card_icon {
+  margin-right: 10px;
+  color: #808080;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    width: 30vw;
+  }
+}

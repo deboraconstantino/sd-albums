@@ -1,0 +1,25 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Bem vindo(a)!</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="loginForm">
+      <mat-card-content class="card_content">
+        <mat-form-field appearance="legacy">
+          <mat-icon matPrefix class="card_icon">person</mat-icon>
+          <mat-label>Usuário</mat-label>
+          <input matInput placeholder="Usuário" formControlName="user" required="true">
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+          <mat-icon matPrefix class="card_icon">key</mat-icon>
+          <mat-label>Senha</mat-label>
+          <input matInput placeholder="Senha" formControlName="password" required="true" type="password">
+        </mat-form-field>
+
+        <button mat-raised-button color="accent" [disabled]="isDisabledButton" (click)="doLogin()">Entrar</button>
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>

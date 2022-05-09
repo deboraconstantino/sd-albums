@@ -1,0 +1,25 @@
+<app-toolbar></app-toolbar>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner color="accent" class="spinner_content"></mat-spinner><br>
+</div>
+
+<div class="container" *ngIf="(albums$ | async)">
+  <mat-card *ngFor="let album of albumsPresentation" class="card">
+    <mat-card-header>
+      <mat-card-title class="card_title">{{ album.albumId + ' - ' + album.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="card_image">
+      <img [src]="album.thumbnailUrl">
+    </mat-card-content>
+
+    <mat-card-content class="card_button">
+      <button mat-stroked-button color="basic" (click)="goToAlbumDetail(album.albumId)" class="card_button_style">Visualizar Detalhes</button>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="container" *ngIf="!isLoading && this.albums.length >= 10">
+  <button mat-stroked-button color="accent" class="show_more_button" (click)="showMore()">Carregar mais dados</button>
+</div>

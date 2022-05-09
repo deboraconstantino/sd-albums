@@ -1,0 +1,13 @@
+<app-toolbar></app-toolbar>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner color="accent" class="spinner_content"></mat-spinner><br>
+</div>
+
+<div *ngIf="photos" class="container">
+  <mat-card *ngFor="let photo of photos" class="card">
+    <mat-card-content>
+      <img [src]="photo.thumbnailUrl">
+    </mat-card-content>
+  </mat-card>
+</div>
